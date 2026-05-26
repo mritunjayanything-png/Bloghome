@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="monetag" content="07d875934d5f19d2e5f957632797918b">
+    
+    <!-- SEO Meta Tags -->
+    <title>Search Articles - To The Point (Environment & Energy)</title>
+    <meta name="description" content="Search our premium collection of articles on Environment, Energy, and Agriculture.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Search Articles - To The Point">
+    <meta property="og:description" content="Search our premium collection of articles on Environment, Energy, and Agriculture.">
+    <meta property="og:url" content="https://blog.pranavblog.online/search">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Quicksand', sans-serif; user-select: none; }
+        
+        /* Glassmorphism Utilities */
+        .glass-nav { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        .glass-morphism { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); }
+        .glass-card-hover { transition: all 0.3s ease; }
+        .glass-card-hover:hover { transform: translateY(-3px); background: rgba(255, 255, 255, 0.95); box-shadow: 0 15px 40px -5px rgba(31, 38, 135, 0.15); }
+        
+        .nature-gradient { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); }
+        
+        /* Utility */
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+        /* Loader Animation */
+        .search-pulse { animation: searchPulse 1.5s ease-in-out infinite alternate; }
+        @keyframes searchPulse {
+            0% { opacity: 0.6; transform: scale(0.99); box-shadow: 0 0 0 rgba(16, 185, 129, 0); }
+            100% { opacity: 1; transform: scale(1); box-shadow: 0 0 15px rgba(16, 185, 129, 0.3); }
+        }
+    </style>
+</head>
+<body class="nature-gradient min-h-screen flex flex-col text-gray-800" oncontextmenu="return false">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav top-0">
+        <div class="max-w-6xl mx-auto px-6 py-3">
+            <a href="https://www.pranavblog.online/home" class="flex items-center gap-3 w-fit hover:opacity-80 transition-opacity">
+                <i class="fas fa-leaf text-green-700 text-2xl"></i>
+                <div class="flex flex-col">
+                    <span class="font-bold text-2xl text-green-900 leading-none">To The Point</span>
+                    <span class="text-[0.65rem] font-semibold text-green-700 tracking-wider uppercase mt-1">Environment Energy and Agriculture</span>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content Area (flex-grow pushes footer down) -->
+    <main class="flex-grow pt-28 pb-12 px-4 md:px-6 w-full max-w-4xl mx-auto flex flex-col items-center">
+
+        <!-- Search Header (Clean & Premium) -->
+        <div class="glass-morphism rounded-3xl p-8 md:p-12 mb-10 w-full text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-green-950 mb-3">Explore Articles</h1>
+            <p class="text-gray-600 mb-8 text-sm md:text-base px-4">Search our premium collection of insights on Environment, Energy, and Agriculture.</p>
+            
+            <form id="searchForm" class="relative w-full max-w-2xl mx-auto">
+                <input type="text" id="searchInput" required autocomplete="off" placeholder="Search for topics, keywords, or questions..." 
+                    class="w-full pl-6 pr-16 py-4 rounded-full border-2 border-green-200 focus:outline-none focus:border-green-500 bg-white/90 backdrop-blur-sm shadow-sm text-gray-800 font-medium text-lg transition-colors placeholder-gray-400">
+                <button type="submit" id="searchBtn" class="absolute right-2 top-2 bottom-2 bg-green-600 hover:bg-green-700 text-white rounded-full w-12 flex items-center justify-center transition-colors shadow-md">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Loader State -->
+        <div id="loaderState" class="hidden w-full text-center py-12">
+            <div class="search-pulse inline-block bg-white/60 backdrop-blur-md rounded-2xl p-6 border border-green-200 text-green-800">
+                <i class="fas fa-circle-notch fa-spin text-3xl mb-3 text-green-600"></i>
+                <h3 class="text-lg font-bold">Searching...</h3>
+                <p class="text-sm text-gray-500 mt-1">Finding the most relevant articles for you.</p>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="hidden w-full max-w-2xl text-center py-8 px-6 glass-morphism rounded-2xl border border-red-200">
+            <i class="fas fa-exclamation-triangle text-red-500 text-3xl mb-3"></i>
+            <h3 class="text-lg font-bold text-gray-800">Something went wrong</h3>
+            <p id="errorMsg" class="text-gray-600 text-sm mt-1">Could not complete the search. Please try again.</p>
+        </div>
+
+        <!-- Results Section (Horizontal Cards) -->
+        <div id="resultsContainer" class="hidden w-full">
+            <div class="flex items-center justify-between border-b border-green-200/50 pb-4 mb-6">
+                <h2 class="text-2xl font-bold text-green-900 flex items-center gap-2">
+                    <i class="fas fa-list-ul text-green-600"></i> Search Results
+                </h2>
+                <span id="resultsCount" class="text-sm font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full"></span>
+            </div>
+            
+            <!-- List Container instead of Grid -->
+            <div id="resultsList" class="flex flex-col gap-6">
+                <!-- Javascript will inject horizontal cards here -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer fixed at bottom -->
+    <footer class="w-full text-center py-6 border-t border-green-200/50 bg-white/30 backdrop-blur-sm mt-auto">
+        <div class="flex flex-wrap justify-center items-center gap-6 text-sm font-semibold text-gray-600">
+            <a href="https://pranavblog.online/privacy-policy" class="hover:text-green-800 transition-colors hover:underline underline-offset-4">Privacy Policy</a>
+            <a href="https://pranavblog.online/terms-of-use" class="hover:text-green-800 transition-colors hover:underline underline-offset-4">Terms of Use</a>
+            <a href="https://pranavblog.online/about-us" class="hover:text-green-800 transition-colors hover:underline underline-offset-4">About Us</a>
+        </div>
+    </footer>
+
+    <script>
+        // API Base URL - Universal (Replace if your domain changes)
+        const API_BASE_URL = "https://blog.pranavblog.online";
+
+        const form = document.getElementById('searchForm');
+        const input = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const loader = document.getElementById('loaderState');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const resultsList = document.getElementById('resultsList');
+        const resultsCount = document.getElementById('resultsCount');
+        const errorState = document.getElementById('errorState');
+        const errorMsg = document.getElementById('errorMsg');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const query = input.value.trim();
+            if(!query) return;
+
+            // UI Reset & Show Loader
+            resultsContainer.classList.add('hidden');
+            errorState.classList.add('hidden');
+            loader.classList.remove('hidden');
+            searchBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>';
+            searchBtn.disabled = true;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/search-blog`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: query })
+                });
+
+                if(!response.ok) throw new Error("Search server is currently busy. Please try again.");
+                
+                const data = await response.json();
+                
+                if(data.status === "success") {
+                    renderResults(data.results);
+                } else {
+                    throw new Error("Unexpected response from server.");
+                }
+
+            } catch (error) {
+                showError(error.message);
+            } finally {
+                loader.classList.add('hidden');
+                searchBtn.innerHTML = '<i class="fas fa-search"></i>';
+                searchBtn.disabled = false;
+            }
+        });
+
+        function renderResults(results) {
+            resultsList.innerHTML = ''; // Clear previous
+
+            if(!results || results.length === 0) {
+                resultsCount.textContent = "0 Results";
+                resultsList.innerHTML = `
+                    <div class="text-center py-12 glass-morphism rounded-2xl">
+                        <i class="fas fa-search-minus text-4xl text-gray-400 mb-3"></i>
+                        <h3 class="text-xl font-bold text-gray-700">No matching articles found</h3>
+                        <p class="text-gray-500 mt-2">Try rephrasing your search or using different keywords.</p>
+                    </div>
+                `;
+                resultsContainer.classList.remove('hidden');
+                return;
+            }
+
+            resultsCount.textContent = `${results.length} Result${results.length !== 1 ? 's' : ''}`;
+
+            results.forEach(result => {
+                // Ensure double quotes in titles don't break HTML attributes
+                const safeTitle = result.title.replace(/"/g, '&quot;');
+                
+                // Determine Thumbnail (Full URL from API base)
+                let imageHtml;
+                if(result.thumbnail_url) {
+                    const fullImageUrl = `${API_BASE_URL}${result.thumbnail_url}`;
+                    imageHtml = `
+                        <div class="w-full md:w-2/5 lg:w-1/3 h-48 md:h-auto shrink-0 overflow-hidden bg-gray-100 border-r border-green-100/50">
+                            <img src="${fullImageUrl}" alt="${safeTitle}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>`;
+                } else {
+                    imageHtml = `
+                        <div class="w-full md:w-2/5 lg:w-1/3 h-48 md:h-auto shrink-0 bg-green-50 flex items-center justify-center border-r border-green-100/50">
+                            <i class="fas fa-leaf text-green-200 text-5xl group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>`;
+                }
+
+                // Horizontal Card Template
+                const card = document.createElement('a');
+                card.href = `${API_BASE_URL}/${result.slug}`; // Direct link to blog post
+                card.className = "glass-morphism glass-card-hover rounded-2xl overflow-hidden group flex flex-col md:flex-row w-full";
+                
+                card.innerHTML = `
+                    ${imageHtml}
+                    <div class="p-6 md:p-8 flex flex-col flex-grow justify-center bg-white/40">
+                        <h3 class="font-bold text-xl md:text-2xl text-green-950 leading-tight mb-3 group-hover:text-green-700 transition-colors">${result.title}</h3>
+                        <p class="text-sm md:text-base text-gray-600 mb-4 line-clamp-3">${result.description}</p>
+                        <div class="text-xs md:text-sm text-green-600 font-bold uppercase tracking-wider mt-auto flex items-center">
+                            Read Article <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                `;
+                
+                resultsList.appendChild(card);
+            });
+
+            resultsContainer.classList.remove('hidden');
+        }
+
+        function showError(msg) {
+            errorMsg.textContent = msg;
+            errorState.classList.remove('hidden');
+        }
+    </script>
+</body>
+      </html>
