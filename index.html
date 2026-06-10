@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To The Point - Environment Energy and Agriculture</title>
+    
+    <!-- SEO & OpenGraph (main.py isko automatically use karega) -->
+    <meta name="description" content="Latest insights and articles on Environment, Energy, and Agriculture. Click and read more.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="To The Point - Environment Energy and Agriculture by Pranav Sinha">
+    <meta property="og:description" content="Latest insights and articles on Environment, Energy, and Agriculture. Click and read more.">
+    <meta property="og:image" content="https://pranavblog.online/preview.jpg">
+    <meta property="og:url" content="https://pranavblog.online">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        body { 
+            font-family: 'Quicksand', sans-serif; 
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        /* Note: Aapka main.py automatically Tailwind ka poora 'critical_css' yahan inject kar dega! */
+    </style>
+</head>
+<body class="nature-gradient min-h-screen text-gray-800" oncontextmenu="return false">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-nav top-0">
+        <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-leaf text-green-700 text-2xl animate-pulse"></i>
+                <div class="flex flex-col">
+                    <span class="font-bold text-2xl text-green-900 tracking-wide leading-none">To The Point</span>
+                    <span class="text-[0.65rem] font-semibold text-green-700 tracking-wider uppercase mt-1">Environment Energy and Agriculture</span>
+                </div>
+            </div>
+            <!-- Search Redirect -->
+            <div onclick="window.location.href='/search'" class="p-2 rounded-full hover:bg-white/40 cursor-pointer text-green-800 transition">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12 px-4 md:px-6 max-w-5xl mx-auto min-h-screen flex flex-col">
+        
+        <!-- 1. FEATURED SLIDER SECTION -->
+        <section class="mb-12 relative group">
+            <div class="flex items-center gap-2 mb-4">
+                <i class="fas fa-leaf text-green-600"></i>
+                <h2 class="text-xl font-bold text-green-900 uppercase tracking-wider">Featured Articles</h2>
+            </div>
+
+            <div class="relative w-full h-64 md:h-[400px] rounded-3xl overflow-hidden shadow-2xl glass-morphism">
+                
+                <!-- Slider Track (main.py yahan images daalega) -->
+                <div id="sliderTrack" class="flex h-full transition-transform duration-500 ease-out"></div>
+
+                <!-- Slider Controls -->
+                <button onclick="prevSlide()" aria-label="Previous Slide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-sm transition z-10 md:opacity-0 md:group-hover:opacity-100 border border-white/30 cursor-pointer">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextSlide()" aria-label="Next Slide" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-sm transition z-10 md:opacity-0 md:group-hover:opacity-100 border border-white/30 cursor-pointer">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Indicators (main.py yahan dots banayega) -->
+                <div id="slideIndicators" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
+            </div>
+        </section>
+
+        <!-- 2. RELATED CONTENT (Grid) -->
+        <section>
+            <div class="flex items-center gap-3 mb-6 border-b border-green-200 pb-4">
+                <div class="h-8 w-1 bg-green-600 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-green-900">Latest Articles</h2>
+            </div>
+
+            <!-- Posts Grid (main.py yahan articles daalega) -->
+            <div id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[200px]"></div>
+            
+            <!-- Load More Container -->
+            <div id="loadMoreContainer" class="mt-10 text-center pb-8 hidden"></div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-green-800/70 text-sm relative z-10 glass-nav mt-auto">
+        <div class="max-w-5xl mx-auto flex flex-col items-center gap-4 px-4 text-center">
+            <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 font-medium">
+                <!-- main.py in links ko automatically absolute URL mein convert kar dega -->
+                <a href="/privacy-policy" class="hover:text-green-900 transition-colors hover:underline underline-offset-4">Privacy Policy</a>
+                <span class="text-green-800/30 hidden sm:inline">|</span>
+                <a href="/terms-of-use" class="hover:text-green-900 transition-colors hover:underline underline-offset-4">Terms of Use</a>
+                <span class="text-green-800/30 hidden sm:inline">|</span>
+                <a href="/about-us" class="hover:text-green-900 transition-colors hover:underline underline-offset-4">About Us</a>
+            </div>
+            <p>&copy; 2025 To The Point. Content Protected.</p>
+        </div>
+    </footer>
+
+    <!-- Note: Backend API fetching, Auto-Slider JS aur Analytics script, main.py generate karke yahan khud append karega -->
+
+</body>
+</html>
