@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To The Point - Environment Energy and Agriculture</title>
+    
+    <meta name="description" content="Latest insights and articles on Environment, Energy, and Agriculture. Click and read more.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="To The Point - Environment Energy and Agriculture by Pranav Sinha">
+    <meta property="og:description" content="Latest insights and articles on Environment, Energy, and Agriculture. Click and read more.">
+    <meta property="og:image" content="https://pranavblog.online/preview.jpg">
+    <meta property="og:url" content="https://pranavblog.online">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        
+        body { 
+            font-family: 'Quicksand', sans-serif; 
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-list-item {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        .glass-list-item:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        .nature-gradient {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+        }
+
+        .slide-overlay {
+            background: linear-gradient(to top, rgba(6, 95, 70, 0.95) 0%, rgba(6, 95, 70, 0.4) 60%, transparent 100%);
+        }
+
+        .skeleton {
+            background: #e0e0e0;
+            background-image: linear-gradient(to right, #e0e0e0 0%, #f0f0f0 20%, #e0e0e0 40%, #e0e0e0 100%);
+            background-repeat: no-repeat;
+            background-size: 1000px 100%; 
+            animation: shimmer 1.5s infinite linear; 
+            border-radius: 8px;
+        }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid #166534;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #ecfdf5; }
+        ::-webkit-scrollbar-thumb { background: #34d399; border-radius: 10px; }
+
+        .search-banner {
+            background: linear-gradient(135deg, rgba(255,255,255,0.78) 0%, rgba(220,252,231,0.88) 100%);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(34,197,94,0.22);
+            box-shadow: 0 4px 24px rgba(21,128,61,0.07), 0 1px 4px rgba(21,128,61,0.05);
+            animation: banner-in 0.4s ease-out forwards;
+        }
+        @keyframes banner-in {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="nature-gradient min-h-screen text-gray-800" oncontextmenu="return false">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-nav top-0">
+        <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-leaf text-green-700 text-2xl animate-pulse"></i>
+                <div class="flex flex-col">
+                    <span class="font-bold text-2xl text-green-900 tracking-wide leading-none">To The Point</span>
+                    <span class="text-[0.65rem] font-semibold text-green-700 tracking-wider uppercase mt-1">Environment Energy and Agriculture</span>
+                </div>
+            </div>
+            <div onclick="window.location.href='/search'" class="p-2 rounded-full hover:bg-white/40 cursor-pointer text-green-800 transition">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-12 px-4 md:px-6 max-w-5xl mx-auto min-h-screen flex flex-col">
+        
+        <!-- Updated Search Banner -->
+        <div id="searchBanner" class="search-banner mb-8 rounded-xl mx-auto w-full" style="padding:0.6rem 0.85rem;">
+            <div class="flex items-center justify-between gap-2 flex-nowrap">
+                <div class="flex items-center gap-3 min-w-0 overflow-hidden">
+                    <div class="w-8 h-8 rounded-full bg-green-500/15 flex items-center justify-center shrink-0">
+                        <i class="fas fa-search text-green-700 text-sm"></i>
+                    </div>
+                    <div class="min-w-0 truncate">
+                        <p class="font-bold text-green-900 text-[0.85rem] m-0 leading-tight truncate">✨ Find articles you'll love</p>
+                        <p class="text-[0.7rem] text-green-800 m-0 mt-0.5 opacity-85 truncate hidden sm:block">Try our Search — explore by topic, keyword or interest.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <a href="/search" class="text-xs bg-green-700 hover:bg-green-800 text-white font-bold py-1.5 px-3 rounded-full no-underline whitespace-nowrap shadow-sm transition-colors">Try Search &rarr;</a>
+                    <button onclick="dismissBanner()" aria-label="Dismiss" class="text-green-700/50 hover:text-green-800 bg-transparent border-none p-1 rounded-full cursor-pointer text-sm shrink-0 transition-colors">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section class="mb-12 relative group">
+            <div class="flex items-center gap-2 mb-4">
+                <i class="fas fa-leaf text-green-600"></i>
+                <h2 class="text-xl font-bold text-green-900 uppercase tracking-wider">Featured Articles</h2>
+            </div>
+
+            <!-- Updated Slider Container with aspect-video and md:aspect-[21/9] -->
+            <div id="sliderContainer" class="relative w-full rounded-3xl overflow-hidden shadow-2xl glass-morphism aspect-video md:aspect-[21/9] lg:aspect-[2.5/1]" style="min-height:200px;">
+                
+                <div id="sliderSkeleton" class="absolute inset-0 z-20 skeleton w-full h-full transition-opacity duration-500"></div>
+
+                <div id="sliderTrack" class="flex h-full transition-transform duration-500 ease-out"></div>
+
+                <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-sm transition z-10 md:opacity-0 md:group-hover:opacity-100 border border-white/30 cursor-pointer">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-sm transition z-10 md:opacity-0 md:group-hover:opacity-100 border border-white/30 cursor-pointer">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div id="slideIndicators" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex items-center gap-3 mb-6 border-b border-green-200 pb-4">
+                <div class="h-8 w-1 bg-green-600 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-green-900">Latest Articles</h2>
+            </div>
+
+            <!-- Updated Grid & Skeleton with h-28 for thinner card, and w-28 h-28 for square thumbnail -->
+            <div id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4 min-h-[120px]">
+                <div class="skeleton-card bg-white/40 rounded-xl overflow-hidden flex animate-pulse h-28 shadow-sm border border-white/50">
+                    <div class="flex-shrink-0 bg-gray-300 w-28 h-28"></div>
+                    <div class="flex-1 p-3 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="h-4 bg-gray-300 rounded w-full"></div>
+                            <div class="h-4 bg-gray-300 rounded w-4/5"></div>
+                        </div>
+                        <div class="h-3 bg-gray-300 rounded w-1/3 mt-2"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card bg-white/40 rounded-xl overflow-hidden flex animate-pulse h-28 shadow-sm border border-white/50">
+                    <div class="flex-shrink-0 bg-gray-300 w-28 h-28"></div>
+                    <div class="flex-1 p-3 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="h-4 bg-gray-300 rounded w-full"></div>
+                            <div class="h-4 bg-gray-300 rounded w-4/5"></div>
+                        </div>
+                        <div class="h-3 bg-gray-300 rounded w-1/3 mt-2"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="loadMoreContainer" class="mt-10 text-center pb-8 hidden">
+                <button id="loadMoreBtn" class="px-8 py-3 text-sm bg-white/60 text-green-800 font-bold rounded-full transition shadow-sm border border-green-800/20 flex items-center gap-2 mx-auto">
+                    <span>Loading...</span>
+                    <div id="btnSpinner" class="spinner"></div>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-8 text-green-800/70 text-sm relative z-10 glass-nav mt-auto">
+        <div class="max-w-5xl mx-auto flex flex-col items-center gap-4 px-4 text-center">
+            
+            <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 font-medium">
+                <a href="/privacy-policy" class="hover:text-green-900 transition-colors hover:underline underline-offset-4">Privacy Policy</a>
+                <span class="text-green-800/30 hidden sm:inline">|</span>
+                <a href="/terms-of-use" class="hover:text-green-900 transition-colors hover:underline underline-offset-4">Terms of Use</a>
+                <span class="text-green-800/30 hidden sm:inline">|</span>
+                <a href="/about-us" class="hover:text-green-900 transition-colors hover:underline underline-offset-4">About Us</a>
+            </div>
+
+            <p>&copy; 2025 To The Point. Content Protected.</p>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+    </style>
+
+    <script>
+        // Search Banner - Always shows on page load
+        window.dismissBanner = function() {
+            var b = document.getElementById('searchBanner');
+            if (b) {
+                b.style.transition = 'opacity 0.35s ease, transform 0.35s ease, max-height 0.4s ease, margin 0.4s ease, padding 0.4s ease';
+                b.style.opacity = '0';
+                b.style.transform = 'translateY(-6px)';
+                b.style.maxHeight = '0';
+                b.style.marginBottom = '0';
+                b.style.padding = '0';
+                b.style.overflow = 'hidden';
+                setTimeout(function() { b.style.display = 'none'; }, 400);
+            }
+        };
+    </script>
+</body>
+</html>
